@@ -1,23 +1,5 @@
 
-const airCraftCarrier = {
-    length:5,
-    vertical:true                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
-}
-const battleship = {
-    length:4,
-    vertical:false
-}
-
-const cruiser = {
-    length:3,
-    vertical:false
-}
-
-const destroyer = {
-    length:2,
-    vertical:false
-}
-
+//=================INI MAMA PAPAN=========================
 function generateBoard(){
     let board = []
     for (let i = 0; i < 11; i++){
@@ -62,12 +44,39 @@ function generateBoard(){
             }
             
             else{
-                board[i].push('~')
+                board[i].push('')
             }
         }
     }
     return board
 }
 
+//================================INI PAPAN====================
+const papan = generateBoard()
 
-console.table(generateBoard())
+//
+const airCraftCarrier = {
+    length:5,
+    vertical:true                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+}
+const battleship = {
+    length:4,
+    vertical:false
+}
+
+const cruiser = {
+    length:3,
+    vertical:false
+}
+
+const destroyer = {
+    length:2,
+    vertical:false
+}
+
+function cetakPesawat(){
+
+}
+
+
+console.table(papan)
