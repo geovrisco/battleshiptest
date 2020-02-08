@@ -86,37 +86,35 @@ const battleship = {
     length:4,
     
 }
-// function emptySpace(){
-    
-// }
-
-function horizontalCheck(startI, startJ ,length){
-    let param ='~'
-    let status = true
-    for (let i = 0; i<length;i++)
-    
-}
-function verticalCheck(){
-
-}
 
 function cetakBS(){
     let orient = Math.floor(Math.random() * Math.floor(2)+1)
     let startPrintbyIhor = Math.floor(Math.random() * 10) + 1 
     let startPrintbyJhor= Math.floor(Math.random() * 6) + 1 
 
-//===============================^HORIZONTAL V vertikal=================================================
 
     let startPrintbyJVer = Math.floor(Math.random() * 10) + 1 // mulai cetak I
     let startPrintbyIVer = Math.floor(Math.random() * 6) + 1 // mulai cet
-    for (let i =0 ; i < battleship.length;i++){
-        if (orient===1 && papan[startPrintbyIhor][startPrintbyJVer+i]!=='A'){ // =====satu pengenny nyamping
-            papan[startPrintbyIhor][startPrintbyJhor+i]=battleship.symbol
-        }else    ///pengen kebawah
-            papan[startPrintbyIVer+i][startPrintbyJVer]=battleship.symbol
+    if (papan[startPrintbyIhor][startPrintbyJhor]=='~' &&
+        papan[startPrintbyIhor+1][startPrintbyJhor]=='~' &&
+        papan[startPrintbyIhor+2][startPrintbyJhor]=='~' &&
+        papan[startPrintbyIVer][startPrintbyJVer+1]=='~' &&
+        papan[startPrintbyIVer][startPrintbyJVer+2]=='~'
+            
+    ){
+        for (let i =0 ; i < battleship.length;i++){
+            if (orient===1){ // =====satu pengenny nyamping
+                papan[startPrintbyIhor][startPrintbyJhor+i]=battleship.symbol
+            }else if (orient===2 ) {  ///pengen kebawah
+                papan[startPrintbyIVer+i][startPrintbyJVer]=battleship.symbol
+            }
+
         }
+    }else{
+        return cetakBS()
     }
     
+}
 cetakBS()
 
 //=============
