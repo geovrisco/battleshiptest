@@ -1,15 +1,13 @@
 
+let 
 
 function generateBoard(){
     let board = []
     for (let i = 0; i < 11; i++){
         board.push([])
         for (let j = 0; j < 11 ; j++){
-            if(j===0){
+            if(j===0 && i >0){
                 switch(i){
-                    case 0 :
-                        board[i].push(' ')
-                        break
                     case 1 :
                         board[i].push('A')
                         break
@@ -40,12 +38,14 @@ function generateBoard(){
                     case 10:
                         board[i].push('j') 
                         break
-
-
                 }
                 
-            }else{
-                board[i].push('*')
+            }else if (j>=0 && i==0){
+                board[i].push(j)
+            }
+            
+            else{
+                board[i].push('~')
             }
         }
     }
