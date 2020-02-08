@@ -54,11 +54,53 @@ function generateBoard(){
 //================================INI PAPAN====================
 const papan = generateBoard()
 
-//
-const airCraftCarrier = {
-    length:5,
-    vertical:true                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+//===============TES ADD CARIIER
+function cetakACC(){
+    let orient = Math.floor(Math.random() * Math.floor(2)+1)
+    if (orient===1){ // =====satu pengenny nyamping
+        let startPrintbyI = Math.floor(Math.random() * 10) + 1 // mulai cetak I
+        let startPrintbyJ = Math.floor(Math.random() * 6) + 1 // mulai cetak J
+        papan[startPrintbyI][startPrintbyJ]='A'
+        papan[startPrintbyI][startPrintbyJ+1]='A'
+        papan[startPrintbyI][startPrintbyJ+2]='A'
+        papan[startPrintbyI][startPrintbyJ+3]='A'
+        papan[startPrintbyI][startPrintbyJ+4]='A'
+    }else{   ///pengen kebawah
+        let startPrintbyJ = Math.floor(Math.random() * 10) + 1 // mulai cetak I
+        let startPrintbyI = Math.floor(Math.random() * 6) + 1 // mulai cet
+        papan[startPrintbyI][startPrintbyJ]='A'
+        papan[startPrintbyI+1][startPrintbyJ]='A'
+        papan[startPrintbyI+2][startPrintbyJ]='A'
+        papan[startPrintbyI+3][startPrintbyJ]='A'
+        papan[startPrintbyI+4][startPrintbyJ]='A'
+    }
+    console.log(orient)
 }
+
+function cetakBS(){
+    let orient = Math.floor(Math.random() * Math.floor(2)+1)
+    if (orient===1){ // =====satu pengenny nyamping
+        let startPrintbyI = Math.floor(Math.random() * 10) + 1 // mulai cetak I
+        let startPrintbyJ = Math.floor(Math.random() * 6) + 1 // mulai cetak J
+        papan[startPrintbyI][startPrintbyJ]='A'
+        papan[startPrintbyI][startPrintbyJ+1]='A'
+        papan[startPrintbyI][startPrintbyJ+2]='A'
+        papan[startPrintbyI][startPrintbyJ+3]='A'
+        papan[startPrintbyI][startPrintbyJ+4]='A'
+    }else{   ///pengen kebawah
+        let startPrintbyJ = Math.floor(Math.random() * 10) + 1 // mulai cetak I
+        let startPrintbyI = Math.floor(Math.random() * 6) + 1 // mulai cet
+        papan[startPrintbyI][startPrintbyJ]='A'
+        papan[startPrintbyI+1][startPrintbyJ]='A'
+        papan[startPrintbyI+2][startPrintbyJ]='A'
+        papan[startPrintbyI+3][startPrintbyJ]='A'
+        papan[startPrintbyI+4][startPrintbyJ]='A'
+    }
+    console.log(orient)
+}
+
+cetakACC()
+//=============
 const battleship = {
     length:4,
     vertical:false
@@ -74,9 +116,6 @@ const destroyer = {
     vertical:false
 }
 
-function cetakPesawat(){
-
-}
 
 
 console.table(papan)
