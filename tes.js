@@ -78,42 +78,48 @@ function cetakACC(){
         papan[startPrintbyI+3][startPrintbyJ]='A'
         papan[startPrintbyI+4][startPrintbyJ]='A'
     }
-    console.log(orient)
 }
 cetakACC()
 
+const battleship = {
+    symbol:'B',
+    length:4,
+    
+}
+// function emptySpace(){
+    
+// }
+
+function horizontalCheck(startI, startJ ,length){
+    let param ='~'
+    let status = true
+    for (let i = 0; i<length;i++)
+    
+}
+function verticalCheck(){
+
+}
+
 function cetakBS(){
     let orient = Math.floor(Math.random() * Math.floor(2)+1)
-    if (orient===1){ // =====satu pengenny nyamping
-        let startPrintbyI = Math.floor(Math.random() * 10) + 1 // mulai cetak I
-        let startPrintbyJ = Math.floor(Math.random() * 6) + 1 // mulai cetak J
-            papan[startPrintbyI][startPrintbyJ]='B'
-            papan[startPrintbyI][startPrintbyJ+1]='B'
-            papan[startPrintbyI][startPrintbyJ+2]='B'
-            papan[startPrintbyI][startPrintbyJ+3]='B'
-            
-        
-        
-    }else{   ///pengen kebawah
-        let startPrintbyJ = Math.floor(Math.random() * 10) + 1 // mulai cetak I
-        let startPrintbyI = Math.floor(Math.random() * 6) + 1 // mulai cet
-        
-            papan[startPrintbyI][startPrintbyJ]='B'
-            papan[startPrintbyI+1][startPrintbyJ]='B'
-            papan[startPrintbyI+2][startPrintbyJ]='B'
-            papan[startPrintbyI+3][startPrintbyJ]='B'
-        
-        
+    let startPrintbyIhor = Math.floor(Math.random() * 10) + 1 
+    let startPrintbyJhor= Math.floor(Math.random() * 6) + 1 
+
+//===============================^HORIZONTAL V vertikal=================================================
+
+    let startPrintbyJVer = Math.floor(Math.random() * 10) + 1 // mulai cetak I
+    let startPrintbyIVer = Math.floor(Math.random() * 6) + 1 // mulai cet
+    for (let i =0 ; i < battleship.length;i++){
+        if (orient===1 && papan[startPrintbyIhor][startPrintbyJVer+i]!=='A'){ // =====satu pengenny nyamping
+            papan[startPrintbyIhor][startPrintbyJhor+i]=battleship.symbol
+        }else    ///pengen kebawah
+            papan[startPrintbyIVer+i][startPrintbyJVer]=battleship.symbol
+        }
     }
-    console.log(orient)
-}
+    
 cetakBS()
 
 //=============
-const battleship = {
-    length:4,
-    vertical:false
-}
 
 const cruiser = {
     length:3,
