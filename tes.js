@@ -44,7 +44,7 @@ function generateBoard(){
             }
             
             else{
-                board[i].push('')
+                board[i].push('~')
             }
         }
     }
@@ -55,6 +55,10 @@ function generateBoard(){
 const papan = generateBoard()
 
 //===============TES ADD CARIIER
+const airCraftCarrier = {
+    length:5,
+    vertical:true                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+}
 function cetakACC(){
     let orient = Math.floor(Math.random() * Math.floor(2)+1)
     if (orient===1){ // =====satu pengenny nyamping
@@ -76,30 +80,35 @@ function cetakACC(){
     }
     console.log(orient)
 }
+cetakACC()
 
 function cetakBS(){
     let orient = Math.floor(Math.random() * Math.floor(2)+1)
     if (orient===1){ // =====satu pengenny nyamping
         let startPrintbyI = Math.floor(Math.random() * 10) + 1 // mulai cetak I
         let startPrintbyJ = Math.floor(Math.random() * 6) + 1 // mulai cetak J
-        papan[startPrintbyI][startPrintbyJ]='A'
-        papan[startPrintbyI][startPrintbyJ+1]='A'
-        papan[startPrintbyI][startPrintbyJ+2]='A'
-        papan[startPrintbyI][startPrintbyJ+3]='A'
-        papan[startPrintbyI][startPrintbyJ+4]='A'
+            papan[startPrintbyI][startPrintbyJ]='B'
+            papan[startPrintbyI][startPrintbyJ+1]='B'
+            papan[startPrintbyI][startPrintbyJ+2]='B'
+            papan[startPrintbyI][startPrintbyJ+3]='B'
+            
+        
+        
     }else{   ///pengen kebawah
         let startPrintbyJ = Math.floor(Math.random() * 10) + 1 // mulai cetak I
         let startPrintbyI = Math.floor(Math.random() * 6) + 1 // mulai cet
-        papan[startPrintbyI][startPrintbyJ]='A'
-        papan[startPrintbyI+1][startPrintbyJ]='A'
-        papan[startPrintbyI+2][startPrintbyJ]='A'
-        papan[startPrintbyI+3][startPrintbyJ]='A'
-        papan[startPrintbyI+4][startPrintbyJ]='A'
+        
+            papan[startPrintbyI][startPrintbyJ]='B'
+            papan[startPrintbyI+1][startPrintbyJ]='B'
+            papan[startPrintbyI+2][startPrintbyJ]='B'
+            papan[startPrintbyI+3][startPrintbyJ]='B'
+        
+        
     }
     console.log(orient)
 }
+cetakBS()
 
-cetakACC()
 //=============
 const battleship = {
     length:4,
