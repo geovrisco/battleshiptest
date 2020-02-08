@@ -1,5 +1,22 @@
 
-let 
+const airCraftCarrier = {
+    length:5,
+    vertical:true                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+}
+const battleship = {
+    length:4,
+    vertical:false
+}
+
+const cruiser = {
+    length:3,
+    vertical:false
+}
+
+const destroyer = {
+    length:2,
+    vertical:false
+}
 
 function generateBoard(){
     let board = []
